@@ -1,5 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import Home from './src/components/Home'
+var NativeRouter = require('react-router-native').NativeRouter
+var Route = require('react-router-native').Route
+var Link = require('react-router-native').Link
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducers from './src/reducers'
+
+const store = createStore(reducers)
 
 export default class App extends React.Component {
 
@@ -9,11 +18,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>pzazzwords</Text>
-        <Text style={styles.tagline}>Generate the most secure passwords</Text>
-        <Button title="Generate" onPress={this.generatePassword} color="#FB5258" style={styles.button}></Button>
-      </View>
+      <Provider store={store}>
+        <NativeRouter>
+              <Route exact path='/' component={Home} />
+          </NativeRouter>
+      </Provider>
+
     );
   }
 }

@@ -27,19 +27,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#444',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  title: {
-    color: '#FB5258',
-    fontSize: 56,
-  },
-  tagline: {
-    color: '#DDD',
-  },
-});

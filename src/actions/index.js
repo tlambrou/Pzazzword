@@ -1,10 +1,10 @@
 export const GENERATE_PASSWORD = "GENERATE_PASSWORD"
 
 export const generatePassword = (size = 12) => {
-  return (
+  return {
     type: GENERATE_PASSWORD,
     payload: {
       size: size,
     }
-  )
+  }
 }

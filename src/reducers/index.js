@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import passwordReducer from './password-reducer'
+import passwordsReducer from './passwords-reducer'
 
 export default combineReducers({
-  passwords: passwordReducer
+  passwords: passwordsReducer
 })

@@ -1,5 +1,6 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View, Button } from 'react-native'
+import PropTypes from 'prop-types'
 import Home from './src/components/Home'
 var NativeRouter = require('react-router-native').NativeRouter
 var Route = require('react-router-native').Route

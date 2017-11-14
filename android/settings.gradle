@@ -1,0 +1,3 @@
+rootProject.name = 'Pzazzword'
+
+include ':app'

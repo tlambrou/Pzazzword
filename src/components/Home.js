@@ -52,7 +52,7 @@ class Home extends React.Component {
               color="#FFF"
               icon={{name: 'autorenew'}}
               large={true}
-              backgroundColor="#D5382B"
+              backgroundColor="#FB5258"
               style={styles.button}></Button>
             <Toast
               visible={this.state.visible}
@@ -61,7 +61,7 @@ class Home extends React.Component {
               animation={true}
               hideOnPress={true}
               shadowColor="#AFF"
-              backgroundColor="#D5382B"
+              backgroundColor="#FB5258"
               textColor="#FFF"
               >Password Copied</Toast>
           </View>

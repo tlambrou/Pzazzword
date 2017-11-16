@@ -1,31 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Clipboard } from 'react-native';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { generatePassword } from '../actions'
 import Toast from 'react-native-root-toast'
 import { Button } from 'react-native-elements'
-var Link = require('react-router-native').Link
-import Header from './Header'
 
 
-class Home extends React.Component {
+class PasswordList extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       visible: false
-    }
-  }
-
-  renderListButton() {
-    if (this.props.passwords[0]) {
-      return (
-        <Link to={`/list`}>
-          <Text>
-            Password List
-          </Text>
-        </Link>
-      )
     }
   }
 
@@ -41,7 +28,10 @@ class Home extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.main}>
-          <Header />
+          <View style={styles.header}>
+            <Text style={styles.title}>pzazzwords</Text>
+            <Text style={styles.tagline}>Generate the most secure passwords</Text>
+          </View>
           <View style={styles.content}>
             <Text style={styles.passwords}>{(this.props.passwords[0]) ? (this.props.passwords[this.props.passwords.length - 1]) : (`Tap 'Generate' to Create a New Password!`)}</Text>
             {(this.props.passwords[0]) ? (<Button
@@ -125,11 +115,11 @@ class Home extends React.Component {
 
   const mapDispatchToProps = () => {
     return {
-      generatePassword
+
     }
   }
 
   export default connect(
     mapStateToProps,
     mapDispatchToProps()
-  )(Home)
+  )(PasswordList)

@@ -1,30 +1,28 @@
-import React from 'react'
+import { Component } from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
-import PropTypes from 'prop-types'
 import Home from './src/components/Home'
-var NativeRouter = require('react-router-native').NativeRouter
-var Route = require('react-router-native').Route
-var Link = require('react-router-native').Link
+import PasswordList from './src/components/PasswordList'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './src/reducers'
+const NativeRouter = require('react-router-native').NativeRouter
+const Route = require('react-router-native').Route
+const Link = require('react-router-native').Link
 
 const store = createStore(reducers)
 
-export default class App extends React.Component {
-
-  generatePassword() {
-    console.log("Password Generate!")
-  }
+export default class App extends Component {
 
   render() {
     return (
       <Provider store={store}>
         <NativeRouter>
-              <Route exact path='/' component={Home} />
-          </NativeRouter>
+          <View style={{ flex:1 }}>
+            <Route exact path='/' component={Home} />
+            <Route path='/list' component={PasswordList} />
+          </View>
+        </NativeRouter>
       </Provider>
-
-    );
+    )
   }
 }

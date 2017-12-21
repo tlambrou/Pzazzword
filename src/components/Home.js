@@ -30,7 +30,7 @@ class Home extends React.Component {
   }
 
   _setContent() {
-    Clipboard.setString(this.props.passwords[this.props.passwords.length - 1])
+    Clipboard.setString(this.props.passwords[this.props.passwords.length - 1].password)
     this.setState({ visible: true })
   }
 

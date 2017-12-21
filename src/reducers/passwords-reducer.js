@@ -15,11 +15,19 @@ const randomString = (n) => {
 }
 
 const passwordsReducer = (state=[], action) => {
-  //Choose which action is react-router-native
   switch (action.type) {
     case GENERATE_PASSWORD:
-      var newPassword = randomString(action.payload.size)
-      return [...state, newPassword]
+      const newPassword = randomString(action.payload.size)
+      var passwordObject = {}
+      if (action.payload.name) {
+        // If a name was given add it to the object
+        passwordObject = {password: newPassword, name: action.payload.name}
+      } else {
+        // Otherwise if no name generate a name to identify the password
+        const newName = "Password " + state.length.toString()
+        passwordObject = {password: newPassword, name: newName}
+      }
+      return [...state, passwordObject]
     default:
      return state
   }

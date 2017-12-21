@@ -1,14 +1,4 @@
 {
-   "expo": {
-    "name": "Pzazzword",
-    "version": "1.0.0",
-    "slug": "pzazzword",
-    "sdkVersion": "22.0.0",
-    "ios": {
-      "bundleIdentifier": "com.ssosSoft.pzazzword"
-    },
-    "android": {
-      "package": "com.ssosSoft.pzazzword"
-    }
-   }
- }
+  "name": "Pzazzword",
+  "displayName": "Pzazzword"
+}
